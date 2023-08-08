@@ -5,18 +5,18 @@ echo "Welcome to the File and Directory Exploration"
 
 # Print all the files with size with infinite loop until user stops it using ctrl+c
 
-for (( ; ; ))
+while true;
 do
-        ls -sh /home/mnmanish/BashBlazechallenge
-done
+        ls -sh
+
+        read -p "Enter a line of text(Press enter to exit):" input
 
 #Prompt user to enter a line of text and count the charcter entered by user
+if [ -z "$input" ]; then
+        echo "Exiting the Interactive Explorer. Goodbye!"
+        break
+fi
 
-echo "Enter a line of text"
+echo "$input" |wc -c
 
-read input
-echo "$input"|wc -c
-
-echo "Another line of text"
-read input2
-echo "$input2"|wc -c
+done
