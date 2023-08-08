@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Print the welcome message
+echo "Welcome to the File and Directory Exploration"
+
+# Print all the files with size with infinite loop until user stops it using ctrl+c
+
+for (( ; ; ))
+do
+        ls -sh /home/mnmanish/BashBlazechallenge
+done
+
+#Prompt user to enter a line of text and count the charcter entered by user
+
+echo "Enter a line of text"
+
+read input
+echo "$input"|wc -c
+
+echo "Another line of text"
+read input2
+echo "$input2"|wc -c
